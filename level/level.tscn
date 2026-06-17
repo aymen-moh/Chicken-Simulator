@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dutl8tw7kv0vx"]
+
+[ext_resource type="Texture2D" uid="uid://dsbsfckfe2mem" path="res://textures/checkboard.png" id="1_7lnir"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lnir"]
+albedo_color = Color(0.37232366, 0.83637846, 0.467852, 1)
+albedo_texture = ExtResource("1_7lnir")
+metallic_specular = 0.0
+ao_enabled = true
+uv1_scale = Vector3(-27.187, -27.187, -27.187)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5gx2l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qohg2"]
+
+[node name="level" type="Node3D" unique_id=1209384584]
+
+[node name="floor" type="MeshInstance3D" parent="." unique_id=1528914912]
+transform = Transform3D(10.12086, 0, 0, 0, 0.30362582, 0, 0, 0, 10.12086, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_7lnir")
+mesh = SubResource("BoxMesh_5gx2l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="floor" unique_id=1783090719]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D" unique_id=757990917]
+shape = SubResource("BoxShape3D_qohg2")
